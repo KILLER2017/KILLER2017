@@ -205,3 +205,48 @@ public class SimpleMailHandler implements MailHandler{
     }
 }
 ```
+
+使用demo
+```java
+package com.example.wallhaven;
+
+import com.example.wallhaven.biz.mail.MailHandler;
+import com.example.wallhaven.biz.mail.MailReceiptService;
+import com.example.wallhaven.biz.mail.Pop3MailReceiptServiceImpl;
+import com.example.wallhaven.biz.mail.SimpleMailHandler;
+import jodd.util.CommandLine;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+/**
+ * @author Alvin
+ */
+@MapperScan("com.example.wallhaven.mapper")
+@EnableAsync
+@EnableScheduling
+@SpringBootApplication
+@MapperScan("com.example.wallhaven.mapper")
+public class WallhavenApplication {
+
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(WallhavenApplication.class, args);
+    }
+
+    public void run(String... args) throws Exception {
+        String hostname = "pophz.qiye.163.com";
+        String username = "xxxxxx@qq.com";
+        String password = "xxxxxxx";
+        MailHandler mailHandler = new SimpleMailHandler();
+        MailReceiptService mailReceiptService = new Pop3MailReceiptServiceImpl(hostname, username, password, mailHandler);
+        mailReceiptService.scan();
+
+    }
+}
+
+```
