@@ -5,7 +5,7 @@
 # Site
 title: ALVIN BLOG
 subtitle: '个人博客'
-description: '保持希望'
+description: '不忘初心，方得始终，初心易得，始终难守'
 keywords: 编程，二次元
 author: Alvin
 language: zh-CN
@@ -14,7 +14,7 @@ timezone: Asia/Shanghai
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://killer2017.github.io
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:hash/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
