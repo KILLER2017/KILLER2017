@@ -1,7 +1,7 @@
 ---
 title: Springboot读取邮箱邮件
 date: 2024-06-02 23:45:02
-tags:
+tags: [springboot, Java, 邮件]
 ---
 
 邮件扫描接口
