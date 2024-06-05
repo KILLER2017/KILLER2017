@@ -101,5 +101,6 @@ pom.xml配置mybatis-generator插件
 
 1. 像创建时间、修改时间每个表都有的字段应该要放到基类里面，让PO继承基类的，但生成器生成的代码没法指定继承
 2. 没法根据表字段注释生成po属性注释
+3. 生成的PO会带有getter/setter方法，但我更喜欢用lombok注解
 
-听说这两个问题可以通过mybatis-generator的插件解决，还得再研究下
+听说这三个问题可以通过mybatis-generator的插件解决，还得再研究下
